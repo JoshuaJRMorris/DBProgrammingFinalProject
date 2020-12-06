@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.mCmbBox = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
+            // 
+            // mCmbBox
+            // 
+            this.mCmbBox.FormattingEnabled = true;
+            this.mCmbBox.Location = new System.Drawing.Point(273, 149);
+            this.mCmbBox.Name = "mCmbBox";
+            this.mCmbBox.Size = new System.Drawing.Size(218, 24);
+            this.mCmbBox.TabIndex = 0;
+            // 
+            // ViewMusicianForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ViewMusicianForm";
+            this.Controls.Add(this.mCmbBox);
+            this.Name = "ViewMusicianForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "View Musician";
+            this.Load += new System.EventHandler(this.ViewMusicianForm_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox mCmbBox;
     }
 }

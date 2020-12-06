@@ -1,6 +1,6 @@
 ﻿namespace FinalDB
 {
-    partial class SplashScreen
+    partial class AddMusicianToBandForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // SplashScreen
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(266, 307);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 52);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Add Musicians";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // AddMusicianToBandForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackgroundImage = global::FinalDB.Properties.Resources.SplashScreen_B1;
-            this.ClientSize = new System.Drawing.Size(998, 552);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1000, 1000);
-            this.MinimumSize = new System.Drawing.Size(800, 450);
-            this.Name = "SplashScreen";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Name = "AddMusicianToBandForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SplashScreen";
-            this.Shown += new System.EventHandler(this.SplashScreen_Shown);
+            this.Text = "Add Musicians To Band";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }

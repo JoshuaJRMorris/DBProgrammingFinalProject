@@ -12,20 +12,24 @@ namespace FinalDB
 {
     public partial class ModifyMusicianForm : Form
     {
+        String fName = "";
+        String lName = "";
+        String instrument = "";
+        String role = "";
+        
         public ModifyMusicianForm()
         {
             InitializeComponent();
         }
 
-        private void LoadTest()
+        private void btnCreateMusician_Click(object sender, EventArgs e)
         {
-            string names = "SELECT FirstName, MusicianID FROM Musician";
-            Utilities.FillListControl(mCmbBx, "FirstName", "MusicianID", DataAccess.GetData(names), true, "Pick a name");
-        }
+            fName = txtFName.Text;
+            lName = txtLName.Text;
+            instrument = txtInstrument.Text;
+            role = txtRole.Text;
 
-        private void MusicianForm_Load(object sender, EventArgs e)
-        {
-            LoadTest();
+
         }
     }
 }

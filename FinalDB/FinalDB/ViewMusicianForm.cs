@@ -16,5 +16,18 @@ namespace FinalDB
         {
             InitializeComponent();
         }
+
+        private void LoadTest()
+        {
+            string names = "SELECT FirstName, MusicianID FROM Musician";
+            Utilities.FillListControl(mCmbBox, "FirstName", "MusicianID", DataAccess.GetData(names), true, "Pick a name");
+        }
+
+        
+
+        private void ViewMusicianForm_Load(object sender, EventArgs e)
+        {
+            LoadTest();
+        }
     }
 }

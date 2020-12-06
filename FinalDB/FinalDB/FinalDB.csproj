@@ -47,11 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LandingForm.cs">
+    <Compile Include="AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LandingForm.Designer.cs">
-      <DependentUpon>LandingForm.cs</DependentUpon>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMusicianToBandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMusicianToBandForm.Designer.cs">
+      <DependentUpon>AddMusicianToBandForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="ModifyBandForm.Designer.cs">
       <DependentUpon>ModifyBandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDBParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDBParentForm.Designer.cs">
+      <DependentUpon>MDBParentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
@@ -99,14 +111,20 @@
     <Compile Include="ViewMusicianForm.Designer.cs">
       <DependentUpon>ViewMusicianForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LandingForm.resx">
-      <DependentUpon>LandingForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddMusicianToBandForm.resx">
+      <DependentUpon>AddMusicianToBandForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModifyBandForm.resx">
+      <DependentUpon>ModifyBandForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModifyMusicianForm.resx">
       <DependentUpon>ModifyMusicianForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDBParentForm.resx">
+      <DependentUpon>MDBParentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,6 +138,15 @@
     </Compile>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBandForm.resx">
+      <DependentUpon>ViewBandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBandMusicianForm.resx">
+      <DependentUpon>ViewBandMusicianForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewMusicianForm.resx">
+      <DependentUpon>ViewMusicianForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

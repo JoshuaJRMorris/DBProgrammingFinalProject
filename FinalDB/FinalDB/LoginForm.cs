@@ -16,5 +16,17 @@ namespace FinalDB
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MDBParentForm parentForm = new MDBParentForm();
+            parentForm.Show();
+        }
     }
 }

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace FinalDB
 {
-    public partial class ModifyBandForm : Form
+    public partial class AboutForm : Form
     {
-        public ModifyBandForm()
+        public AboutForm()
         {
             InitializeComponent();
-        }
-
-        private void btnCreateBand_Click(object sender, EventArgs e)
-        {
-            AddMusicianToBandForm toBandForm = new AddMusicianToBandForm();
-            toBandForm.Show();
         }
     }
 }

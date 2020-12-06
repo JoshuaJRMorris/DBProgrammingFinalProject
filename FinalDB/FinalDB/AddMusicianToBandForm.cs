@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace FinalDB
 {
-    public partial class ModifyBandForm : Form
+    public partial class AddMusicianToBandForm : Form
     {
-        public ModifyBandForm()
+        public AddMusicianToBandForm()
         {
             InitializeComponent();
         }
 
-        private void btnCreateBand_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            AddMusicianToBandForm toBandForm = new AddMusicianToBandForm();
-            toBandForm.Show();
+            //execute sql based on given parameters
+            this.Close();
         }
     }
 }

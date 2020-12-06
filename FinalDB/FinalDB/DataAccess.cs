@@ -22,6 +22,14 @@ namespace FinalDB
             return dt;
         }
 
+        public static void Insert(String database, string cmd)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                
+            }
+        }
+
         public static DataSet GetData(string[] sqlStatements)
         {
             DataSet ds = new DataSet();
