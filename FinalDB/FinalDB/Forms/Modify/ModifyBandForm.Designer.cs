@@ -39,6 +39,7 @@
             this.rBtnTogether = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCreateBand = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,12 +130,11 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(81, 34);
+            this.groupBox1.Location = new System.Drawing.Point(131, 56);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(454, 349);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Create Band";
             // 
             // btnCreateBand
             // 
@@ -146,11 +146,22 @@
             this.btnCreateBand.UseVisualStyleBackColor = true;
             this.btnCreateBand.Click += new System.EventHandler(this.btnCreateBand_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(128, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 39);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Add a Band";
+            // 
             // ModifyBandForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "ModifyBandForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -158,6 +169,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -174,5 +186,6 @@
         private System.Windows.Forms.RadioButton rBtnTogether;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCreateBand;
+        private System.Windows.Forms.Label label3;
     }
 }

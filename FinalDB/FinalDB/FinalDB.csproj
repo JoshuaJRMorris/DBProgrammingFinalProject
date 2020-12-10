@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,83 +49,86 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs">
+    <Compile Include="DataAccess\IMdbRepo.cs" />
+    <Compile Include="DataAccess\MySqlRepo.cs" />
+    <Compile Include="Factories\MdbFactory.cs" />
+    <Compile Include="Forms\View\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutForm.Designer.cs">
+    <Compile Include="Forms\View\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddMusicianToBandForm.cs">
+    <Compile Include="Forms\Modify\AddMusicianToBandForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddMusicianToBandForm.Designer.cs">
+    <Compile Include="Forms\Modify\AddMusicianToBandForm.Designer.cs">
       <DependentUpon>AddMusicianToBandForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyBandForm.cs">
+    <Compile Include="Forms\Modify\ModifyBandForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyBandForm.Designer.cs">
+    <Compile Include="Forms\Modify\ModifyBandForm.Designer.cs">
       <DependentUpon>ModifyBandForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MDBParentForm.cs">
+    <Compile Include="Forms\MDBParentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDBParentForm.Designer.cs">
+    <Compile Include="Forms\MDBParentForm.Designer.cs">
       <DependentUpon>MDBParentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen.cs">
+    <Compile Include="Forms\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SplashScreen.Designer.cs">
+    <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilities.cs" />
-    <Compile Include="DataAccess.cs" />
-    <Compile Include="ModifyMusicianForm.cs">
+    <Compile Include="Models\Musician.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+    <Compile Include="Forms\Modify\ModifyMusicianForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyMusicianForm.Designer.cs">
+    <Compile Include="Forms\Modify\ModifyMusicianForm.Designer.cs">
       <DependentUpon>ModifyMusicianForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewBandForm.cs">
+    <Compile Include="Forms\View\ViewBandForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewBandForm.Designer.cs">
+    <Compile Include="Forms\View\ViewBandForm.Designer.cs">
       <DependentUpon>ViewBandForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewBandMusicianForm.cs">
+    <Compile Include="Forms\View\ViewBandMusicianForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewBandMusicianForm.Designer.cs">
+    <Compile Include="Forms\View\ViewBandMusicianForm.Designer.cs">
       <DependentUpon>ViewBandMusicianForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewMusicianForm.cs">
+    <Compile Include="Forms\View\ViewMusicianForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewMusicianForm.Designer.cs">
+    <Compile Include="Forms\View\ViewMusicianForm.Designer.cs">
       <DependentUpon>ViewMusicianForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddMusicianToBandForm.resx">
+    <EmbeddedResource Include="Forms\Modify\AddMusicianToBandForm.resx">
       <DependentUpon>AddMusicianToBandForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyBandForm.resx">
+    <EmbeddedResource Include="Forms\Modify\ModifyBandForm.resx">
       <DependentUpon>ModifyBandForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyMusicianForm.resx">
+    <EmbeddedResource Include="Forms\Modify\ModifyMusicianForm.resx">
       <DependentUpon>ModifyMusicianForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDBParentForm.resx">
+    <EmbeddedResource Include="Forms\MDBParentForm.resx">
       <DependentUpon>MDBParentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -136,16 +141,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SplashScreen.resx">
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewBandForm.resx">
+    <EmbeddedResource Include="Forms\View\ViewBandForm.resx">
       <DependentUpon>ViewBandForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewBandMusicianForm.resx">
+    <EmbeddedResource Include="Forms\View\ViewBandMusicianForm.resx">
       <DependentUpon>ViewBandMusicianForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewMusicianForm.resx">
+    <EmbeddedResource Include="Forms\View\ViewMusicianForm.resx">
       <DependentUpon>ViewMusicianForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -170,5 +175,6 @@
   <ItemGroup>
     <None Include="Resources\Media\SplashScreen\SplashScreen_B1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -81,3 +81,21 @@ VALUES
 (6, 2, '1983', NULL, 1),
 (7, 2, '2015', NULL, 1),
 (8, 2, '2016', NULL, 1);
+
+
+GO
+
+
+CREATE OR ALTER PROCEDURE dbo.sp_musicianInsert
+	@FirstName VARCHAR(255),
+	@LastName VARCHAR(255),
+	@Instrument VARCHAR(255),
+	@RoleInBand VARCHAR(255)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO MusicBand.dbo.Musician (FirstName, LastName, Instrument, RoleInBand)
+	VALUES (@FirstName, @LastName, @Instrument, @RoleInBand);
+
+END
+GO

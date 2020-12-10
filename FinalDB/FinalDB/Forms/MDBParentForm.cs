@@ -24,7 +24,6 @@ namespace FinalDB
         public void SetStatus(String text, Color color)
         {
             lblStatus.Text = text;
-
             lblStatus.ForeColor = color;
         }
 
