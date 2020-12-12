@@ -29,6 +29,7 @@ namespace FinalDB
 
         private void musiciansToolStripMenuItem_Click(object sender, EventArgs e)
         {
+         
             ViewMusicianForm viewMusicianForm = new ViewMusicianForm();
             
             viewMusicianForm.MdiParent = this;
