@@ -44,9 +44,10 @@
             this.tileHorizontalyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileVerticallyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripLabel();
-            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMusicianToBandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +101,8 @@
             // 
             this.modifyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.musiciansToolStripMenuItem1,
-            this.bandsToolStripMenuItem1});
+            this.bandsToolStripMenuItem1,
+            this.addMusicianToBandToolStripMenuItem});
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
             this.modifyToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.modifyToolStripMenuItem.Text = "Modify";
@@ -108,14 +110,14 @@
             // musiciansToolStripMenuItem1
             // 
             this.musiciansToolStripMenuItem1.Name = "musiciansToolStripMenuItem1";
-            this.musiciansToolStripMenuItem1.Size = new System.Drawing.Size(156, 26);
+            this.musiciansToolStripMenuItem1.Size = new System.Drawing.Size(240, 26);
             this.musiciansToolStripMenuItem1.Text = "Musicians";
             this.musiciansToolStripMenuItem1.Click += new System.EventHandler(this.musiciansToolStripMenuItem1_Click);
             // 
             // bandsToolStripMenuItem1
             // 
             this.bandsToolStripMenuItem1.Name = "bandsToolStripMenuItem1";
-            this.bandsToolStripMenuItem1.Size = new System.Drawing.Size(156, 26);
+            this.bandsToolStripMenuItem1.Size = new System.Drawing.Size(240, 26);
             this.bandsToolStripMenuItem1.Text = "Bands";
             this.bandsToolStripMenuItem1.Click += new System.EventHandler(this.bandsToolStripMenuItem1_Click);
             // 
@@ -157,30 +159,37 @@
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.cascadeToolStripMenuItem.Text = "Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // tileHorizontalyToolStripMenuItem
             // 
             this.tileHorizontalyToolStripMenuItem.Name = "tileHorizontalyToolStripMenuItem";
-            this.tileHorizontalyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tileHorizontalyToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.tileHorizontalyToolStripMenuItem.Text = "Tile Horizontaly";
             this.tileHorizontalyToolStripMenuItem.Click += new System.EventHandler(this.tileHorizontalyToolStripMenuItem_Click);
             // 
             // tileVerticallyToolStripMenuItem
             // 
             this.tileVerticallyToolStripMenuItem.Name = "tileVerticallyToolStripMenuItem";
-            this.tileVerticallyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tileVerticallyToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.tileVerticallyToolStripMenuItem.Text = "Tile Vertically";
             this.tileVerticallyToolStripMenuItem.Click += new System.EventHandler(this.tileVerticallyToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.arrangeIconsToolStripMenuItem.Text = "Arrange Icons";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.arrangeIconsToolStripMenuItem_Click);
+            // 
+            // closeAllToolStripMenuItem
+            // 
+            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.closeAllToolStripMenuItem.Text = "Close All";
+            this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.closeAllToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -199,12 +208,12 @@
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(0, 22);
             // 
-            // closeAllToolStripMenuItem
+            // addMusicianToBandToolStripMenuItem
             // 
-            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.closeAllToolStripMenuItem.Text = "Close All";
-            this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.closeAllToolStripMenuItem_Click);
+            this.addMusicianToBandToolStripMenuItem.Name = "addMusicianToBandToolStripMenuItem";
+            this.addMusicianToBandToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.addMusicianToBandToolStripMenuItem.Text = "Add Musician To Band";
+            this.addMusicianToBandToolStripMenuItem.Click += new System.EventHandler(this.addMusicianToBandToolStripMenuItem_Click);
             // 
             // MDBParentForm
             // 
@@ -248,5 +257,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         public System.Windows.Forms.ToolStripLabel lblStatus;
         private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addMusicianToBandToolStripMenuItem;
     }
 }

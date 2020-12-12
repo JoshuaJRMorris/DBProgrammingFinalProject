@@ -88,7 +88,9 @@
     <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Band.cs" />
     <Compile Include="Models\Musician.cs" />
+    <Compile Include="Models\MusicianBand.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <Compile Include="Forms\Modify\ModifyMusicianForm.cs">
       <SubType>Form</SubType>

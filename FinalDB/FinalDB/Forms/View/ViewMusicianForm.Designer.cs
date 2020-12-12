@@ -28,33 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mCmbBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvMusicians = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMusicians)).BeginInit();
             this.SuspendLayout();
             // 
-            // mCmbBox
+            // label1
             // 
-            this.mCmbBox.FormattingEnabled = true;
-            this.mCmbBox.Location = new System.Drawing.Point(273, 149);
-            this.mCmbBox.Name = "mCmbBox";
-            this.mCmbBox.Size = new System.Drawing.Size(218, 24);
-            this.mCmbBox.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(121, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Musicians";
+            // 
+            // dgvMusicians
+            // 
+            this.dgvMusicians.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMusicians.Location = new System.Drawing.Point(156, 228);
+            this.dgvMusicians.Name = "dgvMusicians";
+            this.dgvMusicians.RowHeadersWidth = 51;
+            this.dgvMusicians.RowTemplate.Height = 24;
+            this.dgvMusicians.Size = new System.Drawing.Size(638, 211);
+            this.dgvMusicians.TabIndex = 1;
             // 
             // ViewMusicianForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.mCmbBox);
+            this.ClientSize = new System.Drawing.Size(1003, 569);
+            this.Controls.Add(this.dgvMusicians);
+            this.Controls.Add(this.label1);
             this.Name = "ViewMusicianForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Musician";
             this.Load += new System.EventHandler(this.ViewMusicianForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMusicians)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox mCmbBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvMusicians;
     }
 }

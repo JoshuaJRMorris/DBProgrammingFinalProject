@@ -19,10 +19,7 @@ namespace FinalDB
 
         }
 
-        public Musician(string firstName, string lastName, string instrument, string roleInBand)
-        {
-
-        }
+       
 
     }
 }

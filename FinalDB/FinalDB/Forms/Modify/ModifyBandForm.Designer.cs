@@ -35,7 +35,7 @@
             this.txtBandName = new System.Windows.Forms.TextBox();
             this.txtReleases = new System.Windows.Forms.TextBox();
             this.txtGenre = new System.Windows.Forms.TextBox();
-            this.txtDateFormed = new System.Windows.Forms.TextBox();
+            this.txtYearFormed = new System.Windows.Forms.TextBox();
             this.rBtnTogether = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCreateBand = new System.Windows.Forms.Button();
@@ -57,9 +57,10 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(54, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.Size = new System.Drawing.Size(128, 21);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Date Founded: ";
+            this.label2.Text = "Year Founded:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
@@ -100,12 +101,12 @@
             this.txtGenre.Size = new System.Drawing.Size(195, 22);
             this.txtGenre.TabIndex = 8;
             // 
-            // txtDateFormed
+            // txtYearFormed
             // 
-            this.txtDateFormed.Location = new System.Drawing.Point(175, 85);
-            this.txtDateFormed.Name = "txtDateFormed";
-            this.txtDateFormed.Size = new System.Drawing.Size(195, 22);
-            this.txtDateFormed.TabIndex = 9;
+            this.txtYearFormed.Location = new System.Drawing.Point(175, 85);
+            this.txtYearFormed.Name = "txtYearFormed";
+            this.txtYearFormed.Size = new System.Drawing.Size(195, 22);
+            this.txtYearFormed.TabIndex = 9;
             // 
             // rBtnTogether
             // 
@@ -122,7 +123,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnCreateBand);
             this.groupBox1.Controls.Add(this.rBtnTogether);
-            this.groupBox1.Controls.Add(this.txtDateFormed);
+            this.groupBox1.Controls.Add(this.txtYearFormed);
             this.groupBox1.Controls.Add(this.txtGenre);
             this.groupBox1.Controls.Add(this.txtReleases);
             this.groupBox1.Controls.Add(this.txtBandName);
@@ -152,7 +153,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(128, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 39);
+            this.label3.Size = new System.Drawing.Size(154, 31);
             this.label3.TabIndex = 12;
             this.label3.Text = "Add a Band";
             // 
@@ -182,7 +183,7 @@
         private System.Windows.Forms.TextBox txtBandName;
         private System.Windows.Forms.TextBox txtReleases;
         private System.Windows.Forms.TextBox txtGenre;
-        private System.Windows.Forms.TextBox txtDateFormed;
+        private System.Windows.Forms.TextBox txtYearFormed;
         private System.Windows.Forms.RadioButton rBtnTogether;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCreateBand;

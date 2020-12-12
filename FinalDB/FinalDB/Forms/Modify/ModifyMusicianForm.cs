@@ -20,12 +20,12 @@ namespace FinalDB
         public ModifyMusicianForm()
         {
             InitializeComponent();
-            init();
+            Init();
         }
 
         IMdbRepo mdbRepo;
 
-        public void init()
+        public void Init()
         {
             mdbRepo = MdbFactory.createRepo();
         }
@@ -46,8 +46,10 @@ namespace FinalDB
 
             mdbRepo.CreateMusician(musician);
 
+            MessageBox.Show("Musician created");
+
             //add validation
-            
+
 
 
         }

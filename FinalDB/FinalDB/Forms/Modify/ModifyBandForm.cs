@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalDB.DataAccess;
+using FinalDB.Factories;
+using FinalDB.Models;
 
 namespace FinalDB
 {
@@ -15,12 +18,36 @@ namespace FinalDB
         public ModifyBandForm()
         {
             InitializeComponent();
+            Init();
+        }
+        IMdbRepo mdbRepo;
+        public void Init()
+        {
+            mdbRepo = MdbFactory.createRepo();
         }
 
         private void btnCreateBand_Click(object sender, EventArgs e)
         {
-            AddMusicianToBandForm toBandForm = new AddMusicianToBandForm();
-            toBandForm.Show();
+            Band band = new Band();
+            band.bandName = txtBandName.Text;
+            band.yearFounded = txtYearFormed.Text;
+            band.releases = Convert.ToInt32(txtReleases.Text);
+            band.genre = txtGenre.Text;
+            //if loop
+            if (rBtnTogether.Checked)
+            {
+                band.stillTogether = true;
+            }
+
+            mdbRepo.CreateBand(band);
+            
+            MessageBox.Show("Band created");
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

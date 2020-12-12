@@ -77,6 +77,12 @@ namespace FinalDB
             aboutForm.MdiParent = this;
             aboutForm.Show();
         }
+        private void addMusicianToBandToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddMusicianToBandForm toBandForm = new AddMusicianToBandForm();
+            toBandForm.MdiParent = this;
+            toBandForm.Show();
+        }
 
         private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -105,5 +111,7 @@ namespace FinalDB
                 child.Close();
             }
         }
+
+        
     }
 }

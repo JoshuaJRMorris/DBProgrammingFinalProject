@@ -2,16 +2,18 @@ CREATE DATABASE MusicBand;
 GO
 USE MusicBand;
 GO
-CREATE TABLE Band (BandID int IDENTITY NOT NULL, BandName varchar(255) NOT NULL, DateFounded date NOT NULL, IsStillTogether bit NOT NULL, NumberOfReleases int NOT NULL, Genre varchar(255) NOT NULL, PRIMARY KEY (BandID));
+CREATE TABLE Band (BandID int IDENTITY NOT NULL, BandName varchar(255) NOT NULL, YearFounded varchar(40) NOT NULL, IsStillTogether bit NOT NULL, NumberOfReleases int NOT NULL, Genre varchar(255) NOT NULL, PRIMARY KEY (BandID));
 CREATE TABLE Login (UserName varchar(255) NOT NULL, Password varchar(64) NOT NULL, LoginID int IDENTITY NOT NULL, PRIMARY KEY (LoginID));
 CREATE TABLE Musician (MusicianID int IDENTITY NOT NULL, FirstName varchar(255) NOT NULL, LastName varchar(255) NULL, Instrument varchar(255) NOT NULL, RoleInBand varchar(255) NOT NULL, PRIMARY KEY (MusicianID));
-CREATE TABLE MusicianBand (MusicianBandID int IDENTITY NOT NULL, MusicianID int NULL, BandID int NULL, JoinedBand date NOT NULL, LeftBand date NULL, PlayedOnRelease bit NOT NULL, PRIMARY KEY (MusicianBandID));
+CREATE TABLE MusicianBand (MusicianBandID int IDENTITY NOT NULL, MusicianID int NULL, BandID int NULL, JoinedBand varchar(40) NOT NULL, LeftBand varchar(40) NULL, PlayedOnRelease bit NOT NULL, PRIMARY KEY (MusicianBandID));
 CREATE UNIQUE INDEX Band_BandID ON Band (BandID);
 CREATE UNIQUE INDEX Login_LoginID ON Login (LoginID);
 CREATE UNIQUE INDEX Musician_MusicianID ON Musician (MusicianID);
 ALTER TABLE MusicianBand ADD CONSTRAINT FKMusician_B957800 FOREIGN KEY (MusicianID) REFERENCES Musician (MusicianID);
 ALTER TABLE MusicianBand ADD CONSTRAINT FKMusician_B255017 FOREIGN KEY (BandID) REFERENCES Band (BandID);
 
+--DROP DATABASE MusicBand
+DROP TABLE MusicianBand
 
 SELECT * FROM Band
 SELECT * FROM Login
@@ -61,7 +63,7 @@ INNER JOIN MusicianBand
 ON MusicianBand.MusicianID = Musician.MusicianID
 INNER JOIN Band
 ON MusicianBand.BandID = Band.BandID
-WHERE Band.BandID LIKE 2
+WHERE Band.BandID LIKE Band.BandID
 ORDER BY FirstName
 
 INSERT INTO Musician
@@ -99,3 +101,63 @@ BEGIN
 
 END
 GO
+
+CREATE OR ALTER PROCEDURE dbo.sp_bandInsert
+	@BandName VARCHAR(255),
+	@YearFounded VARCHAR(40),
+	@IsStillTogether BIT,
+	@NumberOfReleases INT,
+	@Genre VARCHAR(255)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO MusicBand.dbo.Band (BandName, YearFounded, IsStillTogether, NumberOfReleases, Genre)
+	VALUES (@BandName, @YearFounded, @IsStillTogether, @NumberOfReleases, @Genre);
+
+END
+GO
+
+CREATE OR ALTER PROCEDURE dbo.sp_MusicianBandInsert
+	@MusicianID INT,
+	@BandID INT,
+	@JoinedBand VARCHAR(40),
+	@LeftBand VARCHAR(40),
+	@PlayedOnRelease BIT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	INSERT INTO MusicBand.dbo.MusicianBand (MusicianID, BandID, JoinedBand, LeftBand, PlayedOnRelease)
+	VALUES (@MusicianID, @BandID, @JoinedBand, @LeftBand, @PlayedOnRelease);
+
+END
+GO
+
+CREATE OR ALTER PROCEDURE dbo.sp_SelectBands
+AS
+BEGIN
+	SELECT BandID, BandName FROM MusicBand.dbo.Band;
+END
+GO
+
+CREATE OR ALTER PROCEDURE dbo.sp_SelectMusicians
+AS
+BEGIN
+	SELECT * FROM MusicBand.dbo.Musician;
+END
+GO
+
+CREATE OR ALTER PROCEDURE dbo.sp_GetBand
+@BandID INT
+AS
+BEGIN
+	SELECT BandID, BandName FROM MusicBand.dbo.Band WHERE BandID = @BandID;
+END
+GO
+
+
+
+
+SELECT * FROM MusicBand.dbo.Musician
+SELECT * FROM MusicBand.dbo.Band
+SELECT * FROM MusicBand.dbo.MusicianBand
+

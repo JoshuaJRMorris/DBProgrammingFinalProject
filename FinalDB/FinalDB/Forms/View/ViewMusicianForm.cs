@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalDB.DataAccess;
+using FinalDB.Factories;
 
 namespace FinalDB
 {
@@ -15,19 +17,33 @@ namespace FinalDB
         public ViewMusicianForm()
         {
             InitializeComponent();
+            Init();
         }
-
-        private void LoadTest()
+        IMdbRepo mdbRepo;
+        public void Init()
         {
-            //string names = "SELECT FirstName, MusicianID FROM Musician";
-            //Utilities.FillListControl(mCmbBox, "FirstName", "MusicianID", DataAccess.GetData(names), true, "Pick a name");
+            mdbRepo = MdbFactory.createRepo();
+        }
+        private void LoadMusicians()
+        {
+            try
+            {
+                var musicians = mdbRepo.GetMusicians();
+
+                dgvMusicians.DataSource = musicians;
+                dgvMusicians.ReadOnly = true;
+                dgvMusicians.AutoResizeColumns();
+            }catch(Exception e)
+            {
+
+            }
         }
 
         
 
         private void ViewMusicianForm_Load(object sender, EventArgs e)
         {
-            LoadTest();
+            LoadMusicians();
         }
     }
 }

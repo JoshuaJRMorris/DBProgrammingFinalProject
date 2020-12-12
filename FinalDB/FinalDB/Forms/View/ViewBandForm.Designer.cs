@@ -28,20 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvBands = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBands)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(114, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bands";
+            // 
+            // dgvBands
+            // 
+            this.dgvBands.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBands.Location = new System.Drawing.Point(119, 152);
+            this.dgvBands.Name = "dgvBands";
+            this.dgvBands.RowHeadersWidth = 51;
+            this.dgvBands.RowTemplate.Height = 24;
+            this.dgvBands.Size = new System.Drawing.Size(280, 170);
+            this.dgvBands.TabIndex = 1;
             // 
             // ViewBandForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(580, 455);
+            this.Controls.Add(this.dgvBands);
+            this.Controls.Add(this.label1);
             this.Name = "ViewBandForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Band";
+            this.Load += new System.EventHandler(this.ViewBandForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBands)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvBands;
     }
 }

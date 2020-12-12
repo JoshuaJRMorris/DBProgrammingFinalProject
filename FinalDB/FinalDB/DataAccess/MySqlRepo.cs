@@ -6,12 +6,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using CM = System.Configuration.ConfigurationManager;
+using FinalDB.Models;
 
 namespace FinalDB.DataAccess
 {
     class MySqlRepo : IMdbRepo
     {
         private static string connectionString = CM.ConnectionStrings["MusicBand"].ConnectionString;
+
+        public void CreateBand(Band band)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("sp_bandInsert", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@BandName", band.bandName);
+                cmd.Parameters.AddWithValue("@YearFounded", band.yearFounded);
+                cmd.Parameters.AddWithValue("@IsStillTogether", band.stillTogether);
+                cmd.Parameters.AddWithValue("@NumberOfReleases", band.releases);
+                cmd.Parameters.AddWithValue("@Genre", band.genre);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                //if (i != 0)
+                //{
+                //    //add error
+                //}
+            }
+        }
 
         public void CreateMusician(Musician musician)
         {
@@ -59,43 +82,97 @@ namespace FinalDB.DataAccess
             }
             return dt;
         }
-
-        //reimplement these to be useful
-        public DataTable GetProducts(int id)
+        internal static DataTable GetDataTable(SqlCommand cmd)
         {
-            string sql = ($"Select * FROM Products WHERE SupplierId = {id} ORDER BY ProductId;");
             DataTable dt = new DataTable();
-            try
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                }
+                cmd.Connection = conn;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(dt);
             }
-            catch (SqlException e)
+
+            return dt;
+        }
+
+
+        
+        public DataTable GetBands()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                SqlCommand cmd = new SqlCommand("sp_selectBands", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                
+
+                
+            }
+            return dt;
+        }
+
+        public DataTable GetBand(string id)
+        {
+
+            var cmd = 
+               new SqlCommand("EXEC sp_GetSingleBand ");
+                cmd.Parameters.AddWithValue("@BandID", id);
+            
+            return GetDataTable(cmd);
+        }
+
+        public DataTable GetMusicians()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("sp_selectMusicians", conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+
 
             }
             return dt;
         }
 
-        public DataTable GetSuppliers()
+        public void CreateRelationship(MusicianBand musicianBand)
         {
-            string sql = ("Select SupplierId, CompanyName From Suppliers ORDER BY SupplierId");
-            DataTable dt = new DataTable();
-            try
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                }
+                SqlCommand cmd = new SqlCommand("sp_MusicianBandInsert", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MusicianID", musicianBand.musicianId);
+                cmd.Parameters.AddWithValue("@BandID", musicianBand.bandId);
+                cmd.Parameters.AddWithValue("@JoinedBand", musicianBand.joinedBand);
+                cmd.Parameters.AddWithValue("@LeftBand", musicianBand.leftBand);
+                cmd.Parameters.AddWithValue("@PlayedOnRelease", musicianBand.playedOnRelease);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                //if (i != 0)
+                //{
+                //    //add error
+                //}
             }
-            catch (SqlException e)
+        }
+
+        public DataTable GetRelationship(int bandId)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                SqlCommand cmd = new SqlCommand("sp_GetReleationship", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@BandID", bandId);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+
 
             }
             return dt;
