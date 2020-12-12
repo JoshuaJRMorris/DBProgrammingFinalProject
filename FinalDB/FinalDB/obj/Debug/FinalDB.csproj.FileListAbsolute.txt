@@ -29,3 +29,4 @@ C:\Users\jash1\OneDrive\Documents\GitHub\Year2\DBProgrammingFinalProject\FinalDB
 C:\Users\jash1\OneDrive\Documents\GitHub\Year2\DBProgrammingFinalProject\FinalDB\FinalDB\obj\Debug\FinalDB.ViewMusicianForm.resources
 C:\Users\jash1\OneDrive\Documents\GitHub\Year2\DBProgrammingFinalProject\FinalDB\FinalDB\obj\Debug\FinalDB.MDBParentForm.resources
 C:\Users\jash1\OneDrive\Documents\GitHub\Year2\DBProgrammingFinalProject\FinalDB\FinalDB\obj\Debug\FinalDB.AddMusicianToBandForm.resources
+C:\Users\jash1\OneDrive\Documents\GitHub\Year2\DBProgrammingFinalProject\FinalDB\FinalDB\obj\Debug\FinalDB.AboutForm.resources
